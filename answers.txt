@@ -1,0 +1,50 @@
+--What branches exist in this project? HEAD, bower, index, landing, landing -ru, master, package.
+
+$ git branch -a
+* answers
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/bower
+  remotes/origin/index
+  remotes/origin/landing
+  remotes/origin/landing-ru
+  remotes/origin/master
+  remotes/origin/package
+
+
+--What branch has been merged into master?  Index.
+
+$ git branch --merged master -a
+* answers
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/index
+  remotes/origin/master
+
+
+--How many commits (in total) does the repository have? 16.
+
+$ git rev-list --all --count
+16
+
+
+--What commits belong to branch package that don't belong to the branch master? Added package, Added locked package and Removed lock.
+
+//master
+$ git log --oneline
+8a1f5a6 (HEAD -> master, origin/master, origin/HEAD, answers) Added 6
+a16d1b9 Merge branch 'index'
+7fb8d97 added 5
+a0bb17f added 4
+68db036 Added 3
+03b3126 Added 2
+c31af76 (origin/index) Added index.html
+24c74ee Initial commit
+
+//package
+$ git log --oneline
+cab8d80 (HEAD -> package, origin/package) Removed lock
+8bfb714 Added locked package
+daa9e63 Added package
+03b3126 Added 2
+24c74ee Initial commit
